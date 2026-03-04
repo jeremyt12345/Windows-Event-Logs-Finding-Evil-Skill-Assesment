@@ -33,7 +33,7 @@ This one I struggled with because I wasnt fully following the instructions. If y
 <img width="629" height="130" alt="image" src="https://github.com/user-attachments/assets/ccafcc3d-4b3e-4697-ab26-7780271e1346" />
 
 
-Once we find the log we're then suppose to you our past knowledge of Event ID's. We'd be using Event 7, then we filter the log for "mscoree.dll"
+Once we find the log we're then suppose to with our past knowledge of Event ID's. We'd be using Event 7, then we filter the log for "mscoree.dll"
 
 <img width="694" height="326" alt="image" src="https://github.com/user-attachments/assets/7ef30880-c1b9-49c9-9d46-aaf3200b8722" />
 
