@@ -58,5 +58,21 @@ From there I located the injector
 <img width="703" height="406" alt="image" src="https://github.com/user-attachments/assets/9145b75a-b245-460e-a255-1c5eff75cb78" />
 
 
+Q4. "By examining the logs located in the "C:\Logs\Dump" directory, determine the process that performed an LSASS dump. Enter the process name as your answer. Answer format: _.exe"
+
+Initally I checked the previous document on LSASS and found event ID 10 as a way to narrow my focus but I was having trouble digging deeper looking for lsass.exe in a longer search
+
+<img width="987" height="651" alt="image" src="https://github.com/user-attachments/assets/9295df62-25c0-44c3-b36c-d190e660d075" />
+
+But after that failed search I used Claude AI to use "cd C:\Tools\chainsaw> .\chainsaw_x86_64-pc-windows-msvc.exe search "lsass" "C:\Logs\Dump". But theat gave too many results. I later tried ".\chainsaw_x86_64-pc-windows-msvc.exe search "lsass" "C:\Logs\Dump" | Select-String "SourceImage" which worked. 
+
+<img width="1005" height="275" alt="image" src="https://github.com/user-attachments/assets/9ee323ef-b4a6-40d5-8af0-6b7471dd3411" />
+
+
+
+
+
+
+
 
 
