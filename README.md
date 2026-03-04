@@ -68,6 +68,37 @@ But after that failed search I used Claude AI to use "cd C:\Tools\chainsaw> .\ch
 
 <img width="1005" height="275" alt="image" src="https://github.com/user-attachments/assets/9ee323ef-b4a6-40d5-8af0-6b7471dd3411" />
 
+Q5. " By examining the logs located in the "C:\Logs\StrangePPID" directory, determine a process that was used to temporarily execute code based on a strange parent-child relationship. Enter the process name as your answer. Answer format: _.exe"
+
+The question to ask myself is "What Sysmon Event ID logs process creation and includes both the child process AND its parent process" ? Event 1 is thr answer. Luckily again theres only four events listed for Event 1.
+
+<img width="920" height="313" alt="image" src="https://github.com/user-attachments/assets/f1152e9e-d6ce-4b2e-8aae-664fc157bc56" />
+
+
+Then I sifted through them until I found the correct answer
+
+<img width="1037" height="268" alt="image" src="https://github.com/user-attachments/assets/4a8301c6-e4ad-414d-b415-9a52349f0d53" />
+
+I got lukcy to find the answer was 1 out of 4 event id 1 but I didnt clearly know why this is a strange parent relationship and here is Claude ai explanation.
+
+"So put it together:
+
+explorer.exe = file browsing, desktop, taskbar — it has no business spawning error reporting processes
+WerFault.exe = Windows Error Reporting — it should normally be spawned by the application that crashed or by system processes like svchost.exe
+
+So the strange relationship is:
+explorer.exe → spawning → WerFault.exe
+That's like your file manager randomly deciding to launch an error reporting tool — it makes no sense legitimately.
+Why attackers do this:
+
+They use explorer.exe as a fake parent process to make malicious activity look normal
+This technique is called PPID Spoofing (Parent Process ID Spoofing)
+The attacker makes their malicious process appear to be spawned by a trusted process like explorer.exe to blend in
+WerFault.exe is commonly abused because it's a legitimate signed Windows binary
+
+The answer svchost.exe that was pre-filled in the question was wrong — the actual suspicious process that was used to execute code was WerFault.exe because it was spawned by the wrong parent."
+
+
 
 
 
