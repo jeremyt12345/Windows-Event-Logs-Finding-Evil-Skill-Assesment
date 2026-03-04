@@ -64,7 +64,7 @@ Initally I checked the previous document on LSASS and found event ID 10 as a way
 
 <img width="987" height="651" alt="image" src="https://github.com/user-attachments/assets/9295df62-25c0-44c3-b36c-d190e660d075" />
 
-But after that failed search I used Claude AI to use "cd C:\Tools\chainsaw> .\chainsaw_x86_64-pc-windows-msvc.exe search "lsass" "C:\Logs\Dump". But theat gave too many results. I later tried ".\chainsaw_x86_64-pc-windows-msvc.exe search "lsass" "C:\Logs\Dump" | Select-String "SourceImage" which worked. 
+But after that failed search I used Claude AI to use "cd C:\Tools\chainsaw> .\chainsaw_x86_64-pc-windows-msvc.exe search "lsass" "C:\Logs\Dump". But theat gave too many results. I later tried ".\chainsaw_x86_64-pc-windows-msvc.exe search "lsass" "C:\Logs\Dump" | Select-String "SourceImage" which worked. I used a.i. because I knew where I was looking but also knew I was missing a key element of the filter.
 
 <img width="1005" height="275" alt="image" src="https://github.com/user-attachments/assets/9ee323ef-b4a6-40d5-8af0-6b7471dd3411" />
 
