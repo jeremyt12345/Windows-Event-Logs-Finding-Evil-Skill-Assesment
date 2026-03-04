@@ -41,3 +41,22 @@ That then takes us to the Event ID and based on the file path we want to correla
 
 <img width="1125" height="287" alt="image" src="https://github.com/user-attachments/assets/0f2d23af-0071-49b6-9634-73999f90be4f" />
 
+Q3. "By examining the logs located in the "C:\Logs\PowershellExec" directory, determine the process that injected into the process that executed unmanaged PowerShell code. Enter the process name as your answer. Answer format: _.exe"
+
+By first glancing I went searching through Event ID 7 again but the question is asking for what INJECTED the process, not the process itself. Think of it like a break-in — Calculator.exe is the building that got broken into, the injector is the burglar who did it. The building didn't choose to have someone inside it, it was forced. I then looked online to check for Injection Event ID.
+
+<img width="1108" height="407" alt="image" src="https://github.com/user-attachments/assets/b872c536-1111-4e72-b704-a8daefe46ddb" />
+
+
+Luckily there were only three events for Event ID 8.
+
+<img width="750" height="342" alt="image" src="https://github.com/user-attachments/assets/4e3962e2-34d6-42d9-870b-2173016e1599" />
+
+
+From there I located the injector
+
+<img width="703" height="406" alt="image" src="https://github.com/user-attachments/assets/9145b75a-b245-460e-a255-1c5eff75cb78" />
+
+
+
+
